@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.k-dropzone-hint, .k-upload-status, .k-file-extension-wrapper {
+  display: none;
+}
+
+.k-upload-button span{
+  display: none;
+}
+
+.k-dropzone {
+  width: 25rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  border: 2px dashed #ccc;
+  justify-content: center;
+}
+
+.k-upload-button {
+  position: relative;
+  overflow: hidden;
+  direction: ltr;
+}
+
+.k-upload-button input {
+  font: 170px monospace !important;
+  margin: 0;
+  padding: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.k-upload-button input[disabled],
+.k-upload-button input.k-state-disabled {
+  visibility: hidden;
+}
+
+.k-upload .k-upload-button {
+  box-shadow: none;
+  background-color: #ebebeb;
+  min-width: 7em;
+}
+
+.k-dropzone .k-upload-button {
+  display: inline-block;
+  background: url(./images/add.png) no-repeat center center;
+  height: 3em;
+  background-size: 2em;
+  right:30%;
+}
+
+.file-add-hint {
+  position: absolute;
+  top: 43%;
+  right: 30%;
+  font-size: 11px;
+}
+.k-file-name-size-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.k-upload-files {
+  list-style: none;;
+}
