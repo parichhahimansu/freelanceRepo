@@ -13,11 +13,15 @@
 }
 
 .container {
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.container p {
-    color: red;
+.container p, h2 {
     text-align: center;
 }
 
@@ -25,10 +29,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    width: 800px;
-    height: 200px;
-    border: 4px dashed #4aa1f3;
+    margin: 3em 0;
+    width: 15%;
+    height: 30%;
+    border: 2px dashed #666;
+    padding: 1em;
+    margin-top: 0;
 }
 
 .upload-icon {
@@ -43,9 +49,9 @@
 
 .drop-message {
     text-align: center;
-    color: #4aa1f3;
+    color: #666;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 13px;
 }
 
 .file-progressBar {
@@ -73,17 +79,17 @@
 }
   
 .file-display-container {
-    position: fixed;
-    width: 805px;
+    /* position: fixed;
+    width: 805px; */
 }
   
 .file-status-bar{
     width: 100%;
     vertical-align:top;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     margin-bottom: 20px;
     position: relative;
-    line-height: 50px;
+    /* line-height: 50px; */
     height: 50px;
 }
   
@@ -116,8 +122,8 @@
 .file-error {
     display: inline-block;
     vertical-align: top;
-    margin-left: 50px;
-    color: #9aa9bb;
+    margin-left: 0px;
+    color: #666;
 }
 
 .file-error-message {
@@ -258,4 +264,26 @@
 
 .error {
     color: red;
+}
+
+.file-upload-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 3em 1em;
+}
+
+.button-upload-file {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.button-upload-file button {
+    background: blue;
+    color: #fff;
+    border: none;
+    padding: 0.5em;
+    border-radius: 4px;
 }
