@@ -287,3 +287,11 @@
     padding: 0.5em;
     border-radius: 4px;
 }
+
+.preview-image{
+    display: none;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

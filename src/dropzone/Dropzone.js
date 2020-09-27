@@ -6,6 +6,7 @@ import './Dropzone.css';
 const Dropzone = () => {
     const fileInputRef = useRef();
     const modalImageRef = useRef();
+    const previewImageRef = useRef();
     const modalRef = useRef();
     const progressRef = useRef();
     const uploadRef = useRef();
@@ -67,6 +68,7 @@ const Dropzone = () => {
         for(let i = 0; i < files.length; i++) {
             if (validateFile(files[i])) {
                 setSelectedFiles(prevArray => [...prevArray, files[i]]);
+                showImageModal(files[i]);
             } else {
                 files[i]['invalid'] = true;
                 setSelectedFiles(prevArray => [...prevArray, files[i]]);
@@ -119,6 +121,15 @@ const Dropzone = () => {
         reader.readAsDataURL(file);
         reader.onload = function(e) {
             modalImageRef.current.style.backgroundImage = `url(${e.target.result})`;
+        }
+    }
+
+    const showImageModal = (file) => {
+        const reader = new FileReader();
+        previewImageRef.current.style.display = "block";
+        reader.readAsDataURL(file);
+        reader.onload = function(e) {
+            previewImageRef.current.style.backgroundImage = `url(${e.target.result})`;
         }
     }
 
@@ -207,6 +218,7 @@ const Dropzone = () => {
                         )
                     }
                 </div>
+                <div className="preview-image" ref={previewImageRef}></div>
                 <div className='button-upload-file'>
                     <button>BROWSER</button>
                     <button>CONTINUE</button>
